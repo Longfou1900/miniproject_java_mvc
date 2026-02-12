@@ -8,7 +8,7 @@ import view01.Studentview01;
 
 public class App {
     public static void main(String[] args) {
-        // 1. Setup Infrastructure (Data Access & Mapping)
+        // 1. Setup (Data Access & Mapping)
         StudentMapper studentMapper = new StudentMapper();
         StudentDao studentDao = new StudentDaoImplement();
 
@@ -19,15 +19,15 @@ public class App {
         // Note: Make sure the package name is correct (view.Studentview01)
         Studentview01 studentView = new Studentview01(studentService);
 
-        // 4. Setup Orchestrator (Controller Layer)
+        // 4. Setup (Controller Layer)
         StudentController studentController = new StudentController(studentService, studentView);
 
-        // 5. Start Application
+        // 5. Start App
         System.out.println("===============================");
         System.out.println("Student Management System v1.0");
         System.out.println("===============================");
 
-        // The Controller now manages the displayMenu and logic flow
+        //run The Controller manages the displayMenu and logic flow
         studentController.run();
     }
 }
